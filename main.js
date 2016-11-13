@@ -41,7 +41,7 @@ function mail(durationTxt){
 
   transporter.sendMail(mailOptions, function(error, info){
     if(error) return console.log(error);
-    console.log('Message sent: ' + info.response);
+    console.log(`[${timeNowText}] Message sent: ${info.response}`);
   });
 }
 
