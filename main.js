@@ -51,10 +51,12 @@ function formatDuration(text) {
 }
 
 function timeNow() {
-  const time = new Date();
-  const mins = time.getMinutes();
-  let minsText = (mins < 10)? ('0' + mins): mins;
-  return `${time.getHours()}:${minsText}`;
+  let timeString = (new Date()).toLocaleTimeString(
+    'thai',
+    { timeZone: 'Asia/Bangkok', hour12: false }
+  );
+  timeString = timeString.substring(0, timeString.lastIndexOf(':'));
+  return timeString;
 }
 
 run(mail);
